@@ -29,7 +29,7 @@ A comprehensive B2B lead management platform built with Node.js, Express, and Mo
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB with Mongoose ODM
 - **Frontend**: HTML5, CSS3, JavaScript (Static files)
-- **Authentication**: Custom JWT-based authentication
+- **Authentication**: EMAIL/PASS
 - **Middleware**: CORS, dotenv for environment management
 
 ## Prerequisites
