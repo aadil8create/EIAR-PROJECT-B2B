@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Submit Enquiry - Bizlead by EIAR</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">
+              <i data-lucide="building-2"></i>
+            </div>
+            <span>Bizlead <small style="font-size: 12px; font-weight: 400; opacity: 0.7">by EIAR</small></span>
+          </a>
+        </div>
+
+        <nav class="nav-section">
+          <div class="nav-label">Main Menu</div>
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">
+                <i data-lucide="layout-dashboard" class="nav-icon"></i>
+                <span>Overview</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="register.html" class="nav-link">
+                <i data-lucide="store" class="nav-icon"></i>
+                <span>Register Business</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="enquiry.html" class="nav-link active">
+                <i data-lucide="shopping-cart" class="nav-icon"></i>
+                <span>Submit Enquiry</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="dashboard.html" class="nav-link">
+                <i data-lucide="bar-chart-3" class="nav-icon"></i>
+                <span>My Dashboard</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="nav-section">
+          <div class="nav-label">Other</div>
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a href="pricing.html" class="nav-link">
+                <i data-lucide="credit-card" class="nav-icon"></i>
+                <span>Pricing</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i data-lucide="settings" class="nav-icon"></i>
+                <span>Settings</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i data-lucide="help-circle" class="nav-icon"></i>
+                <span>Help Center</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <header class="page-header">
+          <div>
+            <h1 class="page-title">Submit Enquiry</h1>
+            <p class="page-subtitle">Tell us what you need - we'll connect you with suppliers</p>
+          </div>
+        </header>
+
+        <div class="content-area">
+          <div style="max-width: 800px; margin: 0 auto">
+            <!-- Enquiry Form -->
+            <div class="card">
+              <form id="enquiryForm">
+                <div class="card-header">
+                  <h2 class="card-title">
+                    <i data-lucide="user" style="width: 20px; height: 20px; margin-right: 8px; vertical-align: text-bottom"></i>
+                    Your Information
+                  </h2>
+                  <p class="card-subtitle">How can suppliers contact you?</p>
+                </div>
+
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label class="form-label">
+                      <i data-lucide="building" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: text-bottom"></i>
+                      Name / Company Name
+                      <span class="required">*</span>
+                    </label>
+                    <input type="text" class="form-input" id="buyerName" placeholder="Enter your name or company name" required />
+                  </div>
+
+                  <div class="form-grid form-grid-2">
+                    <div class="form-group">
+                      <label class="form-label">
+                        <i data-lucide="mail" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: text-bottom"></i>
+                        Email Address
+                        <span class="required">*</span>
+                      </label>
+                      <input type="email" class="form-input" id="buyerEmail" placeholder="your@email.com" required />
+                    </div>
+
+                    <div class="form-group">
+                      <label class="form-label">
+                        <i data-lucide="phone" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: text-bottom"></i>
+                        Phone Number
+                      </label>
+                      <input type="tel" class="form-input" id="buyerPhone" placeholder="+971 50 123 4567" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card-header" style="margin-top: 32px">
+                  <h2 class="card-title">
+                    <i data-lucide="clipboard-list" style="width: 20px; height: 20px; margin-right: 8px; vertical-align: text-bottom"></i>
+                    Requirement Details
+                  </h2>
+                  <p class="card-subtitle">What are you looking for?</p>
+                </div>
+
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label class="form-label">
+                      <i data-lucide="package" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: text-bottom"></i>
+                      Product Category
+                      <span class="required">*</span>
+                    </label>
+                    <select class="form-select" id="category" required>
+                      <option value="">Select a category</option>
+                      <option value="Electronics">Electronics</option>
+                      <option value="Furniture">Furniture</option>
+                      <option value="Clothing">Clothing</option>
+                      <option value="Food">Food & Beverages</option>
+                      <option value="Automotive">Automotive</option>
+                      <option value="Construction">Construction Materials</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+
+                  <div class="form-grid form-grid-2">
+                    <div class="form-group">
+                      <label class="form-label">
+                        <i data-lucide="map-pin" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: text-bottom"></i>
+                        Market / Location
+                        <span class="required">*</span>
+                      </label>
+                      <select class="form-select" id="market" required>
+                        <option value="">Select location</option>
+                        <option value="UAE">UAE</option>
+                        <option value="Saudi Arabia">Saudi Arabia</option>
+                        <option value="Europe">Europe</option>
+                        <option value="Asia">Asia</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="form-label">
+                        <i data-lucide="users" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: text-bottom"></i>
+                        You are a
+                        <span class="required">*</span>
+                      </label>
+                      <select class="form-select" id="buyerType" required>
+                        <option value="">Select type</option>
+                        <option value="Retailer">Retailer</option>
+                        <option value="Wholesaler">Wholesaler</option>
+                        <option value="Distributor">Distributor</option>
+                        <option value="End User">End User</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">
+                      <i data-lucide="file-text" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: text-bottom"></i>
+                      Product / Service Description
+                      <span class="required">*</span>
+                    </label>
+                    <textarea class="form-textarea" id="productDescription" placeholder="Describe what you're looking for in detail. Include specifications, quality requirements, delivery timeline, etc." required></textarea>
+                  </div>
+
+                  <div class="form-grid form-grid-2">
+                    <div class="form-group">
+                      <label class="form-label">
+                        <i data-lucide="hash" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: text-bottom"></i>
+                        Quantity (Optional)
+                      </label>
+                      <input type="text" class="form-input" id="quantity" placeholder="e.g., 500 units, 10 tons" />
+                    </div>
+
+                    <div class="form-group">
+                      <label class="form-label">
+                        <i data-lucide="dollar-sign" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: text-bottom"></i>
+                        Budget (Optional)
+                      </label>
+                      <input type="text" class="form-input" id="budget" placeholder="e.g., $50,000, AED 100,000" />
+                    </div>
+                  </div>
+                </div>
+
+                <div style="margin-top: 32px; display: flex; gap: 12px">
+                  <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">
+                    <i data-lucide="send" style="width: 18px; height: 18px"></i>
+                    Submit Enquiry
+                  </button>
+                  <a href="index.html" class="btn btn-secondary btn-lg">
+                    <i data-lucide="x" style="width: 18px; height: 18px"></i>
+                    Cancel
+                  </a>
+                </div>
+              </form>
+            </div>
+
+            <!-- Alert Message - Now appears BELOW the form -->
+            <div id="alertMessage" class="alert" style="margin-top: 16px"></div>
+
+            <!-- Info Card -->
+            <div class="card" style="margin-top: 24px; background: rgba(13, 148, 136, 0.05); border: 1px solid rgba(13, 148, 136, 0.2)">
+              <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 12px; color: var(--primary-color); display: flex; align-items: center; gap: 8px">
+                <i data-lucide="sparkles" style="width: 20px; height: 20px"></i>
+                100% Free for Buyers
+              </h3>
+              <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.6">Submitting enquiries is completely free. Our system will automatically match you with relevant suppliers who will contact you directly with their best offers.</p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      // Initialize Lucide icons
+      lucide.createIcons();
+
+      const form = document.getElementById("enquiryForm");
+      const alertMessage = document.getElementById("alertMessage");
+      const submitBtn = document.getElementById("submitBtn");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const formData = {
+          buyerName: document.getElementById("buyerName").value.trim(),
+          buyerEmail: document.getElementById("buyerEmail").value.trim(),
+          buyerPhone: document.getElementById("buyerPhone").value.trim(),
+          category: document.getElementById("category").value,
+          market: document.getElementById("market").value,
+          buyerType: document.getElementById("buyerType").value,
+          productDescription: document.getElementById("productDescription").value.trim(),
+          quantity: document.getElementById("quantity").value.trim(),
+          budget: document.getElementById("budget").value.trim(),
+        };
+
+        try {
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = '<span class="loading"></span> Submitting...';
+
+          alertMessage.className = "alert alert-info show";
+          alertMessage.innerHTML = `
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <i data-lucide="loader" style="width: 20px; height: 20px; animation: spin 1s linear infinite;"></i>
+                        <span>Matching with suppliers...</span>
+                    </div>
+                `;
+          lucide.createIcons();
+
+          const response = await fetch("http://localhost:5000/api/enquiry/submit", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData),
+          });
+
+          const data = await response.json();
+
+          if (data.success) {
+            alertMessage.className = "alert alert-success show";
+            alertMessage.innerHTML = `
+                        <div style="display: flex; align-items: start; gap: 12px;">
+                            <i data-lucide="check-circle" style="width: 24px; height: 24px; flex-shrink: 0;"></i>
+                            <div>
+                                <strong>Enquiry Submitted Successfully!</strong><br><br>
+                                <div style="background: white; padding: 12px; border-radius: 8px; margin: 12px 0;">
+                                    <strong>Enquiry ID:</strong> <code style="background: var(--bg-main); padding: 4px 8px; border-radius: 4px;">${data.data.enquiryId}</code><br>
+                                    <strong>Matched Suppliers:</strong> <span style="color: var(--primary-color); font-weight: 600;">${data.data.matchedBusinesses}</span>
+                                </div>
+                                ${data.data.matchedBusinesses > 0 ? '<strong style="display: flex; align-items: center; gap: 6px;"><i data-lucide="rocket" style="width: 16px; height: 16px;"></i> Great! Relevant suppliers will contact you soon!</strong>' : '<strong style="display: flex; align-items: center; gap: 6px;"><i data-lucide="mail" style="width: 16px; height: 16px;"></i> We\'ll notify you when matching suppliers register.</strong>'}
+                            </div>
+                        </div>
+                    `;
+            lucide.createIcons();
+
+            form.reset();
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<i data-lucide="send" style="width: 18px; height: 18px;"></i> Submit Another Enquiry';
+            lucide.createIcons();
+          } else {
+            alertMessage.className = "alert alert-error show";
+            alertMessage.innerHTML = `
+                        <div style="display: flex; align-items: start; gap: 12px;">
+                            <i data-lucide="alert-triangle" style="width: 20px; height: 20px; flex-shrink: 0;"></i>
+                            <div>
+                                <strong>Submission Failed</strong><br>${data.message}
+                            </div>
+                        </div>
+                    `;
+            lucide.createIcons();
+
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<i data-lucide="send" style="width: 18px; height: 18px;"></i> Submit Enquiry';
+            lucide.createIcons();
+          }
+        } catch (error) {
+          alertMessage.className = "alert alert-error show";
+          alertMessage.innerHTML = `
+                    <div style="display: flex; align-items: start; gap: 12px;">
+                        <i data-lucide="x-circle" style="width: 20px; height: 20px; flex-shrink: 0;"></i>
+                        <div>
+                            <strong>Error</strong><br>${error.message}
+                        </div>
+                    </div>
+                `;
+          lucide.createIcons();
+
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<i data-lucide="send" style="width: 18px; height: 18px;"></i> Submit Enquiry';
+          lucide.createIcons();
+        }
+      });
+    </script>
+
+    <style>
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      code {
+        font-family: "Courier New", monospace;
+        font-size: 13px;
+      }
+    </style>
+  </body>
+</html>

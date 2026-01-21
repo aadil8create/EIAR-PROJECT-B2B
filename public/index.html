@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bizlead - Dashboard by EIAR</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <i data-lucide="building-2"></i>
+                    </div>
+                    <span>Bizlead <small style="font-size: 12px; font-weight: 400; opacity: 0.7;">by EIAR</small></span>
+                </a>
+            </div>
+            
+            <nav class="nav-section">
+                <div class="nav-label">Main Menu</div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">
+                            <i data-lucide="layout-dashboard" class="nav-icon"></i>
+                            <span>Overview</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="register.html" class="nav-link">
+                            <i data-lucide="store" class="nav-icon"></i>
+                            <span>Register Business</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="enquiry.html" class="nav-link">
+                            <i data-lucide="shopping-cart" class="nav-icon"></i>
+                            <span>Submit Enquiry</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-link">
+                            <i data-lucide="bar-chart-3" class="nav-icon"></i>
+                            <span>My Dashboard</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <nav class="nav-section">
+                <div class="nav-label">Other</div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="pricing.html" class="nav-link">
+                            <i data-lucide="credit-card" class="nav-icon"></i>
+                            <span>Pricing</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i data-lucide="settings" class="nav-icon"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i data-lucide="help-circle" class="nav-icon"></i>
+                            <span>Help Center</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="page-header">
+                <div>
+                    <h1 class="page-title">Good Morning! 👋</h1>
+                    <p class="page-subtitle">Welcome to Bizlead by EIAR</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-secondary">
+                        <i data-lucide="calendar" style="width: 16px; height: 16px;"></i>
+                        Last Month
+                    </button>
+                    <button class="btn btn-primary">
+                        <i data-lucide="sliders" style="width: 16px; height: 16px;"></i>
+                        Customize
+                    </button>
+                </div>
+            </header>
+
+            <div class="content-area">
+                <!-- Stats -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 8px;">
+                            <div class="stat-label">TOTAL BUSINESSES</div>
+                            <i data-lucide="building" style="width: 20px; height: 20px; color: var(--text-muted);"></i>
+                        </div>
+                        <div class="stat-value">245</div>
+                        <div style="font-size: 12px; color: var(--success); margin-top: 4px;">
+                            <i data-lucide="trending-up" style="width: 14px; height: 14px;"></i> +12.5%
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 8px;">
+                            <div class="stat-label">ACTIVE ENQUIRIES</div>
+                            <i data-lucide="file-text" style="width: 20px; height: 20px; color: var(--text-muted);"></i>
+                        </div>
+                        <div class="stat-value">1,283</div>
+                        <div style="font-size: 12px; color: var(--success); margin-top: 4px;">
+                            <i data-lucide="trending-up" style="width: 14px; height: 14px;"></i> +8.2%
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 8px;">
+                            <div class="stat-label">LEADS MATCHED</div>
+                            <i data-lucide="zap" style="width: 20px; height: 20px; color: var(--text-muted);"></i>
+                        </div>
+                        <div class="stat-value">5,429</div>
+                        <div style="font-size: 12px; color: var(--success); margin-top: 4px;">
+                            <i data-lucide="trending-up" style="width: 14px; height: 14px;"></i> +18.7%
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Cards -->
+                <div class="form-grid form-grid-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">
+                                <i data-lucide="store" style="width: 20px; height: 20px; margin-right: 8px; vertical-align: text-bottom;"></i>
+                                For Businesses
+                            </h2>
+                            <p class="card-subtitle">Register and receive qualified buyer leads</p>
+                        </div>
+                        <p style="color: var(--text-secondary); margin-bottom: 20px; line-height: 1.6;">
+                            Subscribe to our platform to automatically receive buyer enquiries matching your business category, market, and customer type.
+                        </p>
+                        <div style="display: flex; gap: 12px;">
+                            <a href="register.html" class="btn btn-primary">
+                                <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+                                Register Now
+                            </a>
+                            <a href="dashboard.html" class="btn btn-outline">
+                                <i data-lucide="external-link" style="width: 16px; height: 16px;"></i>
+                                View Dashboard
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">
+                                <i data-lucide="shopping-cart" style="width: 20px; height: 20px; margin-right: 8px; vertical-align: text-bottom;"></i>
+                                For Buyers
+                            </h2>
+                            <p class="card-subtitle">Find suppliers instantly</p>
+                        </div>
+                        <p style="color: var(--text-secondary); margin-bottom: 20px; line-height: 1.6;">
+                            Submit your product requirements and get matched with relevant suppliers. No registration needed - completely free for buyers.
+                        </p>
+                        <div style="display: flex; gap: 12px;">
+                            <a href="enquiry.html" class="btn btn-primary">
+                                <i data-lucide="send" style="width: 16px; height: 16px;"></i>
+                                Submit Enquiry
+                            </a>
+                            <a href="#" class="btn btn-outline">
+                                <i data-lucide="book-open" style="width: 16px; height: 16px;"></i>
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- How it Works -->
+                <div class="card" style="margin-top: 24px;">
+                    <div class="card-header">
+                        <h2 class="card-title">How It Works</h2>
+                        <p class="card-subtitle">Three simple steps to connect buyers with suppliers</p>
+                    </div>
+                    <div class="form-grid form-grid-2" style="margin-bottom: 0;">
+                        <div style="padding: 16px; background: var(--bg-main); border-radius: 8px;">
+                            <div style="width: 40px; height: 40px; background: var(--primary-color); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; margin-bottom: 12px;">1</div>
+                            <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">Business Subscribes</h3>
+                            <p style="font-size: 14px; color: var(--text-secondary);">
+                                Businesses register and set their preferences for lead categories, markets, and buyer types.
+                            </p>
+                        </div>
+                        <div style="padding: 16px; background: var(--bg-main); border-radius: 8px;">
+                            <div style="width: 40px; height: 40px; background: var(--primary-color); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; margin-bottom: 12px;">2</div>
+                            <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">Buyer Submits Enquiry</h3>
+                            <p style="font-size: 14px; color: var(--text-secondary);">
+                                Buyers fill out a simple form with their product requirements. No login needed.
+                            </p>
+                        </div>
+                        <div style="padding: 16px; background: var(--bg-main); border-radius: 8px;">
+                            <div style="width: 40px; height: 40px; background: var(--primary-color); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; margin-bottom: 12px;">3</div>
+                            <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">Smart Matching</h3>
+                            <p style="font-size: 14px; color: var(--text-secondary);">
+                                Our system automatically matches enquiries with relevant businesses based on criteria.
+                            </p>
+                        </div>
+                        <div style="padding: 16px; background: var(--bg-main); border-radius: 8px;">
+                            <div style="width: 40px; height: 40px; background: var(--primary-color); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; margin-bottom: 12px;">4</div>
+                            <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">Business Connects</h3>
+                            <p style="font-size: 14px; color: var(--text-secondary);">
+                                Matched businesses receive leads in their dashboard and can contact buyers directly.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Business Registration - Bizlead by EIAR</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">
+              <i data-lucide="building-2"></i>
+            </div>
+            <span>Bizlead <small style="font-size: 12px; font-weight: 400; opacity: 0.7">by EIAR</small></span>
+          </a>
+        </div>
+
+        <nav class="nav-section">
+          <div class="nav-label">Main Menu</div>
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">
+                <i data-lucide="layout-dashboard" class="nav-icon"></i>
+                <span>Overview</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="register.html" class="nav-link active">
+                <i data-lucide="store" class="nav-icon"></i>
+                <span>Register Business</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="enquiry.html" class="nav-link">
+                <i data-lucide="shopping-cart" class="nav-icon"></i>
+                <span>Submit Enquiry</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="dashboard.html" class="nav-link">
+                <i data-lucide="bar-chart-3" class="nav-icon"></i>
+                <span>My Dashboard</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="nav-section">
+          <div class="nav-label">Other</div>
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a href="pricing.html" class="nav-link">
+                <i data-lucide="credit-card" class="nav-icon"></i>
+                <span>Pricing</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i data-lucide="settings" class="nav-icon"></i>
+                <span>Settings</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i data-lucide="help-circle" class="nav-icon"></i>
+                <span>Help Center</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <header class="page-header">
+          <div>
+            <h1 class="page-title">Business Registration</h1>
+            <p class="page-subtitle">Register to start receiving qualified buyer leads</p>
+          </div>
+        </header>
+
+        <div class="content-area">
+          <div style="max-width: 800px; margin: 0 auto">
+            <!-- Alert Message -->
+            <div id="alertMessage" class="alert"></div>
+
+            <!-- Registration Form -->
+            <div class="card">
+              <form id="registerForm">
+                <div class="card-header">
+                  <h2 class="card-title">
+                    <i data-lucide="briefcase" style="width: 20px; height: 20px; margin-right: 8px; vertical-align: text-bottom"></i>
+                    Business Information
+                  </h2>
+                  <p class="card-subtitle">Tell us about your business</p>
+                </div>
+
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label class="form-label">
+                      Business Name
+                      <span class="required">*</span>
+                    </label>
+                    <input type="text" class="form-input" id="businessName" placeholder="Enter your business name" required />
+                  </div>
+
+                  <div class="form-grid form-grid-2">
+                    <div class="form-group">
+                      <label class="form-label">
+                        <i data-lucide="mail" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: text-bottom"></i>
+                        Email Address
+                        <span class="required">*</span>
+                      </label>
+                      <input type="email" class="form-input" id="email" placeholder="business@example.com" required />
+                    </div>
+
+                    <div class="form-group">
+                      <label class="form-label">
+                        <i data-lucide="lock" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: text-bottom"></i>
+                        Password
+                        <span class="required">*</span>
+                      </label>
+                      <input type="password" class="form-input" id="password" placeholder="Min. 6 characters" minlength="6" required />
+                    </div>
+                  </div>
+
+                  <div class="form-grid form-grid-2">
+                    <div class="form-group">
+                      <label class="form-label">
+                        <i data-lucide="phone" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: text-bottom"></i>
+                        Phone Number
+                      </label>
+                      <input type="tel" class="form-input" id="phone" placeholder="+971 50 123 4567" />
+                    </div>
+
+                    <div class="form-group">
+                      <label class="form-label">
+                        <i data-lucide="map-pin" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: text-bottom"></i>
+                        Country
+                      </label>
+                      <input type="text" class="form-input" id="country" placeholder="e.g., UAE" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card-header" style="margin-top: 32px">
+                  <h2 class="card-title">
+                    <i data-lucide="target" style="width: 20px; height: 20px; margin-right: 8px; vertical-align: text-bottom"></i>
+                    Lead Preferences
+                  </h2>
+                  <p class="card-subtitle">Choose what type of leads you want to receive</p>
+                </div>
+
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label class="form-label">
+                      <i data-lucide="package" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: text-bottom"></i>
+                      Product Category
+                      <span class="required">*</span>
+                    </label>
+                    <select class="form-select" id="category" required>
+                      <option value="">Select a category</option>
+                      <option value="Electronics">Electronics</option>
+                      <option value="Furniture">Furniture</option>
+                      <option value="Clothing">Clothing</option>
+                      <option value="Food">Food & Beverages</option>
+                      <option value="Automotive">Automotive</option>
+                      <option value="Construction">Construction Materials</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+
+                  <div class="form-grid form-grid-2">
+                    <div class="form-group">
+                      <label class="form-label">
+                        <i data-lucide="globe" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: text-bottom"></i>
+                        Target Market
+                        <span class="required">*</span>
+                      </label>
+                      <select class="form-select" id="market" required>
+                        <option value="">Select market</option>
+                        <option value="UAE">UAE</option>
+                        <option value="Saudi Arabia">Saudi Arabia</option>
+                        <option value="Europe">Europe</option>
+                        <option value="Asia">Asia</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="form-label">
+                        <i data-lucide="users" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: text-bottom"></i>
+                        Buyer Type
+                        <span class="required">*</span>
+                      </label>
+                      <select class="form-select" id="buyerType" required>
+                        <option value="">Select buyer type</option>
+                        <option value="Retailer">Retailer</option>
+                        <option value="Wholesaler">Wholesaler</option>
+                        <option value="Distributor">Distributor</option>
+                        <option value="End User">End User</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div style="margin-top: 32px; display: flex; gap: 12px">
+                  <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">
+                    <i data-lucide="check-circle" style="width: 18px; height: 18px"></i>
+                    Register Business
+                  </button>
+                  <a href="index.html" class="btn btn-secondary btn-lg">
+                    <i data-lucide="x" style="width: 18px; height: 18px"></i>
+                    Cancel
+                  </a>
+                </div>
+              </form>
+            </div>
+
+            <!-- Info Card -->
+            <div class="card" style="margin-top: 24px; background: rgba(13, 148, 136, 0.05); border: 1px solid rgba(13, 148, 136, 0.2)">
+              <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 12px; color: var(--primary-color); display: flex; align-items: center; gap: 8px">
+                <i data-lucide="gift" style="width: 20px; height: 20px"></i>
+                Free Trial Included
+              </h3>
+              <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.6">Get <strong>10 free leads</strong> when you register today! No credit card required. Start receiving qualified buyer enquiries immediately after registration.</p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      // Initialize Lucide icons
+      lucide.createIcons();
+
+      const form = document.getElementById("registerForm");
+      const alertMessage = document.getElementById("alertMessage");
+      const submitBtn = document.getElementById("submitBtn");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const formData = {
+          businessName: document.getElementById("businessName").value.trim(),
+          email: document.getElementById("email").value.trim(),
+          password: document.getElementById("password").value,
+          phone: document.getElementById("phone").value.trim(),
+          country: document.getElementById("country").value.trim(),
+          category: document.getElementById("category").value,
+          market: document.getElementById("market").value,
+          buyerType: document.getElementById("buyerType").value,
+        };
+
+        try {
+          // Show loading state
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = '<span class="loading"></span> Registering...';
+
+          alertMessage.className = "alert alert-info show";
+          alertMessage.innerHTML = `
+                    <i data-lucide="loader" style="width: 16px; height: 16px; animation: spin 1s linear infinite;"></i>
+                    Creating your account...
+                `;
+          lucide.createIcons();
+
+          const response = await fetch("http://localhost:5000/api/business/register", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData),
+          });
+
+          const data = await response.json();
+
+          if (data.success) {
+            alertMessage.className = "alert alert-success show";
+            alertMessage.innerHTML = `
+                        <div style="display: flex; align-items: start; gap: 12px;">
+                            <i data-lucide="check-circle" style="width: 20px; height: 20px; flex-shrink: 0;"></i>
+                            <div>
+                                <strong>Registration Successful!</strong><br><br>
+                                <div style="background: white; padding: 12px; border-radius: 8px; margin: 12px 0;">
+                                    <strong>Business ID:</strong> <code style="background: var(--bg-main); padding: 4px 8px; border-radius: 4px;">${data.data.businessId}</code><br>
+                                    <strong>Email:</strong> ${data.data.email}<br>
+                                    <strong>Lead Credits:</strong> ${data.data.subscription.leadCredits} free leads
+                                </div>
+                                <em style="display: flex; align-items: center; gap: 6px;">
+                                    <i data-lucide="alert-circle" style="width: 14px; height: 14px;"></i>
+                                    Save your Business ID to access your dashboard later!
+                                </em><br>
+                                <small style="opacity: 0.8;">Redirecting to dashboard in 3 seconds...</small>
+                            </div>
+                        </div>
+                    `;
+            lucide.createIcons();
+
+            form.reset();
+
+            setTimeout(() => {
+              window.location.href = `dashboard.html?id=${data.data.businessId}`;
+            }, 3000);
+          } else {
+            alertMessage.className = "alert alert-error show";
+            alertMessage.innerHTML = `
+                        <div style="display: flex; align-items: start; gap: 12px;">
+                            <i data-lucide="alert-triangle" style="width: 20px; height: 20px; flex-shrink: 0;"></i>
+                            <div>
+                                <strong>Registration Failed</strong><br>${data.message}
+                            </div>
+                        </div>
+                    `;
+            lucide.createIcons();
+
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<i data-lucide="check-circle" style="width: 18px; height: 18px;"></i> Register Business';
+            lucide.createIcons();
+          }
+        } catch (error) {
+          alertMessage.className = "alert alert-error show";
+          alertMessage.innerHTML = `
+                    <div style="display: flex; align-items: start; gap: 12px;">
+                        <i data-lucide="x-circle" style="width: 20px; height: 20px; flex-shrink: 0;"></i>
+                        <div>
+                            <strong>Error</strong><br>${error.message}
+                        </div>
+                    </div>
+                `;
+          lucide.createIcons();
+
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<i data-lucide="check-circle" style="width: 18px; height: 18px;"></i> Register Business';
+          lucide.createIcons();
+        }
+      });
+    </script>
+
+    <style>
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      code {
+        font-family: "Courier New", monospace;
+        font-size: 13px;
+      }
+    </style>
+  </body>
+</html>

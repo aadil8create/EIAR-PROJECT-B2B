@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard - Bizlead by EIAR</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <i data-lucide="building-2"></i>
+                    </div>
+                    <span>Bizlead <small style="font-size: 12px; font-weight: 400; opacity: 0.7;">by EIAR</small></span>
+                </a>
+            </div>
+            
+            <nav class="nav-section">
+                <div class="nav-label">Main Menu</div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <i data-lucide="layout-dashboard" class="nav-icon"></i>
+                            <span>Overview</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="register.html" class="nav-link">
+                            <i data-lucide="store" class="nav-icon"></i>
+                            <span>Register Business</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="enquiry.html" class="nav-link">
+                            <i data-lucide="shopping-cart" class="nav-icon"></i>
+                            <span>Submit Enquiry</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-link active">
+                            <i data-lucide="bar-chart-3" class="nav-icon"></i>
+                            <span>My Dashboard</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <nav class="nav-section">
+                <div class="nav-label">Other</div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="pricing.html" class="nav-link">
+                            <i data-lucide="credit-card" class="nav-icon"></i>
+                            <span>Pricing</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i data-lucide="settings" class="nav-icon"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i data-lucide="help-circle" class="nav-icon"></i>
+                            <span>Help Center</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="page-header">
+                <div>
+                    <h1 class="page-title">My Dashboard</h1>
+                    <p class="page-subtitle">View and manage your leads</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-secondary" onclick="location.reload()">
+                        <i data-lucide="refresh-cw" style="width: 16px; height: 16px;"></i>
+                        Refresh
+                    </button>
+                </div>
+            </header>
+
+            <div class="content-area">
+                <!-- User Profile Section -->
+                <div id="profileSection" style="display: none;">
+                    <div class="card" style="margin-bottom: 24px;">
+                        <div class="card-header" style="border-bottom: 1px solid var(--border-color);">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <h2 class="card-title">
+                                        <i data-lucide="user" style="width: 20px; height: 20px; margin-right: 8px; vertical-align: text-bottom;"></i>
+                                        My Account
+                                    </h2>
+                                    <p class="card-subtitle">Your business profile and subscription details</p>
+                                </div>
+                                <button class="btn btn-secondary" onclick="logout()" style="display: flex; align-items: center; gap: 8px;">
+                                    <i data-lucide="log-out" style="width: 16px; height: 16px;"></i>
+                                    Logout
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div style="padding: 24px;">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+                                <!-- Business Details -->
+                                <div>
+                                    <h3 style="font-size: 14px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px;">
+                                        Business Information
+                                    </h3>
+                                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                                        <div>
+                                            <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px; display: flex; align-items: center; gap: 4px;">
+                                                <i data-lucide="building-2" style="width: 12px; height: 12px;"></i>
+                                                Business Name
+                                            </div>
+                                            <div style="font-size: 16px; font-weight: 500; color: var(--text-primary);" id="profileBusinessName">-</div>
+                                        </div>
+                                        <div>
+                                            <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px; display: flex; align-items: center; gap: 4px;">
+                                                <i data-lucide="mail" style="width: 12px; height: 12px;"></i>
+                                                Email
+                                            </div>
+                                            <div style="font-size: 14px; color: var(--text-primary);" id="profileEmail">-</div>
+                                        </div>
+                                        <div id="profilePhoneContainer">
+                                            <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px; display: flex; align-items: center; gap: 4px;">
+                                                <i data-lucide="phone" style="width: 12px; height: 12px;"></i>
+                                                Phone
+                                            </div>
+                                            <div style="font-size: 14px; color: var(--text-primary);" id="profilePhone">-</div>
+                                        </div>
+                                        <div id="profileCountryContainer">
+                                            <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px; display: flex; align-items: center; gap: 4px;">
+                                                <i data-lucide="globe" style="width: 12px; height: 12px;"></i>
+                                                Country
+                                            </div>
+                                            <div style="font-size: 14px; color: var(--text-primary);" id="profileCountry">-</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Subscription Details -->
+                                <div>
+                                    <h3 style="font-size: 14px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px;">
+                                        Subscription Details
+                                    </h3>
+                                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                                        <div>
+                                            <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px; display: flex; align-items: center; gap: 4px;">
+                                                <i data-lucide="package" style="width: 12px; height: 12px;"></i>
+                                                Category
+                                            </div>
+                                            <div style="font-size: 14px; color: var(--text-primary);" id="profileCategory">-</div>
+                                        </div>
+                                        <div>
+                                            <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px; display: flex; align-items: center; gap: 4px;">
+                                                <i data-lucide="map-pin" style="width: 12px; height: 12px;"></i>
+                                                Market
+                                            </div>
+                                            <div style="font-size: 14px; color: var(--text-primary);" id="profileMarket">-</div>
+                                        </div>
+                                        <div>
+                                            <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px; display: flex; align-items: center; gap: 4px;">
+                                                <i data-lucide="users" style="width: 12px; height: 12px;"></i>
+                                                Buyer Type
+                                            </div>
+                                            <div style="font-size: 14px; color: var(--text-primary);" id="profileBuyerType">-</div>
+                                        </div>
+                                        <div>
+                                            <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px; display: flex; align-items: center; gap: 4px;">
+                                                <i data-lucide="star" style="width: 12px; height: 12px;"></i>
+                                                Lead Credits
+                                            </div>
+                                            <div style="font-size: 16px; font-weight: 600; color: var(--primary-color);" id="profileCredits">-</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Business ID Input -->
+                <div class="card" id="loginCard">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <i data-lucide="key" style="width: 20px; height: 20px; margin-right: 8px; vertical-align: text-bottom;"></i>
+                            Login to Your Dashboard
+                        </h2>
+                        <p class="card-subtitle">Enter your credentials to access your leads</p>
+                    </div>
+                    
+                    <div style="max-width: 600px;">
+                        <div style="margin-bottom: 16px;">
+                            <label for="emailInput" style="display: block; font-size: 14px; font-weight: 500; color: var(--text-primary); margin-bottom: 8px;">Email</label>
+                            <div style="position: relative;">
+                                <i data-lucide="mail" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; color: var(--text-muted);"></i>
+                                <input type="email" class="form-input" id="emailInput" 
+                                       placeholder="Enter your email" 
+                                       style="padding-left: 40px;">
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 16px;">
+                            <label for="passwordInput" style="display: block; font-size: 14px; font-weight: 500; color: var(--text-primary); margin-bottom: 8px;">Password</label>
+                            <div style="position: relative;">
+                                <i data-lucide="lock" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; color: var(--text-muted);"></i>
+                                <input type="password" class="form-input" id="passwordInput" 
+                                       placeholder="Enter your password" 
+                                       style="padding-left: 40px;">
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-primary" onclick="login()" style="width: 100%;">
+                            <i data-lucide="log-in" style="width: 16px; height: 16px;"></i>
+                            Login to Dashboard
+                        </button>
+                    </div>
+                    
+                    <div id="alertMessage" class="alert" style="margin-top: 16px;"></div>
+                </div>
+
+                <!-- Stats -->
+                <div id="statsSection" style="display: none;">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 8px;">
+                                <div class="stat-label">TOTAL LEADS</div>
+                                <i data-lucide="inbox" style="width: 20px; height: 20px; color: var(--text-muted);"></i>
+                            </div>
+                            <div class="stat-value" id="totalLeads">0</div>
+                        </div>
+                        <div class="stat-card">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 8px;">
+                                <div class="stat-label">NEW LEADS</div>
+                                <i data-lucide="star" style="width: 20px; height: 20px; color: var(--primary-color);"></i>
+                            </div>
+                            <div class="stat-value" id="newLeads" style="color: var(--primary-color);">0</div>
+                        </div>
+                        <div class="stat-card">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 8px;">
+                                <div class="stat-label">CONTACTED</div>
+                                <i data-lucide="check-circle" style="width: 20px; height: 20px; color: var(--text-muted);"></i>
+                            </div>
+                            <div class="stat-value" id="contactedLeads">0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leads List -->
+                <div id="leadsSection" style="display: none;">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">
+                                <i data-lucide="list" style="width: 20px; height: 20px; margin-right: 8px; vertical-align: text-bottom;"></i>
+                                Your Leads
+                            </h2>
+                            <p class="card-subtitle" id="leadsSubtitle"></p>
+                        </div>
+                        <div id="leadsContainer"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Check if already logged in
+        const storedBusinessId = sessionStorage.getItem('businessId');
+        if (storedBusinessId) {
+            // Auto-load dashboard if already logged in
+            showDashboard();
+            loadLeads(storedBusinessId);
+        }
+
+        // Allow Enter key on password field
+        document.getElementById('passwordInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') login();
+        });
+
+        // Allow Enter key on email field
+        document.getElementById('emailInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') login();
+        });
+
+        async function login() {
+            const email = document.getElementById('emailInput').value.trim();
+            const password = document.getElementById('passwordInput').value.trim();
+            const alertMessage = document.getElementById('alertMessage');
+            const statsSection = document.getElementById('statsSection');
+            const leadsSection = document.getElementById('leadsSection');
+
+            if (!email || !password) {
+                alertMessage.className = 'alert alert-error show';
+                alertMessage.innerHTML = `
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <i data-lucide="alert-circle" style="width: 20px; height: 20px;"></i>
+                        <span>Please enter both email and password</span>
+                    </div>
+                `;
+                lucide.createIcons();
+                statsSection.style.display = 'none';
+                leadsSection.style.display = 'none';
+                return;
+            }
+
+            try {
+                alertMessage.className = 'alert alert-info show';
+                alertMessage.innerHTML = `
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <i data-lucide="loader" style="width: 20px; height: 20px; animation: spin 1s linear infinite;"></i>
+                        <span>Logging in...</span>
+                    </div>
+                `;
+                lucide.createIcons();
+                statsSection.style.display = 'none';
+                leadsSection.style.display = 'none';
+
+                const response = await fetch('http://localhost:5000/api/business/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email, password })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    // Store complete session data
+                    sessionStorage.setItem('businessId', data.data.businessId);
+                    sessionStorage.setItem('businessName', data.data.businessName);
+                    sessionStorage.setItem('email', data.data.email);
+                    sessionStorage.setItem('phone', data.data.phone || '');
+                    sessionStorage.setItem('country', data.data.country || '');
+                    
+                    // Store subscription data
+                    if (data.data.subscription) {
+                        sessionStorage.setItem('category', data.data.subscription.category);
+                        sessionStorage.setItem('market', data.data.subscription.market);
+                        sessionStorage.setItem('buyerType', data.data.subscription.buyerType);
+                        sessionStorage.setItem('leadCredits', data.data.subscription.leadCredits);
+                    }
+
+                    alertMessage.className = 'alert alert-success show';
+                    alertMessage.innerHTML = `
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <i data-lucide="check-circle" style="width: 20px; height: 20px;"></i>
+                            <span>Login successful! Loading your dashboard...</span>
+                        </div>
+                    `;
+                    lucide.createIcons();
+
+                    // Show dashboard and load data
+                    setTimeout(() => {
+                        showDashboard();
+                        loadLeads(data.data.businessId);
+                    }, 1000);
+
+                } else {
+                    alertMessage.className = 'alert alert-error show';
+                    alertMessage.innerHTML = `
+                        <div style="display: flex; align-items: start; gap: 12px;">
+                            <i data-lucide="x-circle" style="width: 20px; height: 20px; flex-shrink: 0;"></i>
+                            <div>
+                                <strong>Login Failed</strong><br>${data.message || 'Invalid credentials'}
+                            </div>
+                        </div>
+                    `;
+                    lucide.createIcons();
+                    statsSection.style.display = 'none';
+                    leadsSection.style.display = 'none';
+                }
+
+            } catch (error) {
+                alertMessage.className = 'alert alert-error show';
+                alertMessage.innerHTML = `
+                    <div style="display: flex; align-items: start; gap: 12px;">
+                        <i data-lucide="alert-triangle" style="width: 20px; height: 20px; flex-shrink: 0;"></i>
+                        <div>
+                            <strong>Error</strong><br>${error.message}
+                        </div>
+                    </div>
+                `;
+                lucide.createIcons();
+                statsSection.style.display = 'none';
+                leadsSection.style.display = 'none';
+            }
+        }
+
+        function showDashboard() {
+            // Hide login card, show profile section
+            document.getElementById('loginCard').style.display = 'none';
+            document.getElementById('profileSection').style.display = 'block';
+            
+            // Populate profile data
+            populateProfile();
+        }
+
+        function populateProfile() {
+            // Business details
+            document.getElementById('profileBusinessName').textContent = sessionStorage.getItem('businessName') || '-';
+            document.getElementById('profileEmail').textContent = sessionStorage.getItem('email') || '-';
+            
+            const phone = sessionStorage.getItem('phone');
+            const country = sessionStorage.getItem('country');
+            
+            if (phone) {
+                document.getElementById('profilePhone').textContent = phone;
+            } else {
+                document.getElementById('profilePhoneContainer').style.display = 'none';
+            }
+            
+            if (country) {
+                document.getElementById('profileCountry').textContent = country;
+            } else {
+                document.getElementById('profileCountryContainer').style.display = 'none';
+            }
+            
+            // Subscription details
+            document.getElementById('profileCategory').textContent = sessionStorage.getItem('category') || 'Not set';
+            document.getElementById('profileMarket').textContent = sessionStorage.getItem('market') || 'Not set';
+            document.getElementById('profileBuyerType').textContent = sessionStorage.getItem('buyerType') || 'Not set';
+            
+            // Fetch fresh credit data from server
+            refreshCredits();
+            
+            // Reinitialize icons
+            lucide.createIcons();
+        }
+
+        async function refreshCredits() {
+            try {
+                const businessId = sessionStorage.getItem('businessId');
+                if (!businessId) return;
+                
+                // Re-login to get fresh data (lightweight approach)
+                const email = sessionStorage.getItem('email');
+                const storedPassword = sessionStorage.getItem('tempPassword'); // Note: not secure, better to have a dedicated endpoint
+                
+                // Since we don't have password, let's create a dedicated endpoint
+                // For now, we'll fetch leads and get updated data
+                // Better solution: create GET /api/business/:businessId endpoint
+                
+                // Display cached value first
+                const cachedCredits = sessionStorage.getItem('leadCredits') || '0';
+                document.getElementById('profileCredits').textContent = cachedCredits;
+                
+                // Fetch fresh subscription data
+                const response = await fetch(`http://localhost:5000/api/business/${businessId}/subscription`);
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.success && data.data) {
+                        const freshCredits = data.data.leadCredits || 0;
+                        document.getElementById('profileCredits').textContent = freshCredits;
+                        // Update sessionStorage too
+                        sessionStorage.setItem('leadCredits', freshCredits);
+                    }
+                }
+            } catch (error) {
+                console.log('Could not refresh credits:', error);
+                // Fallback to cached value
+                document.getElementById('profileCredits').textContent = sessionStorage.getItem('leadCredits') || '0';
+            }
+        }
+
+        function logout() {
+            // Clear session
+            sessionStorage.clear();
+            
+            // Hide dashboard sections
+            document.getElementById('profileSection').style.display = 'none';
+            document.getElementById('statsSection').style.display = 'none';
+            document.getElementById('leadsSection').style.display = 'none';
+            
+            // Show login card
+            document.getElementById('loginCard').style.display = 'block';
+            
+            // Clear inputs
+            document.getElementById('emailInput').value = '';
+            document.getElementById('passwordInput').value = '';
+            
+            // Clear alert
+            document.getElementById('alertMessage').className = 'alert';
+            document.getElementById('alertMessage').innerHTML = '';
+        }
+
+        async function loadLeads(businessId) {
+            // Use parameter or get from session storage
+            if (!businessId) {
+                businessId = sessionStorage.getItem('businessId');
+            }
+            
+            const alertMessage = document.getElementById('alertMessage');
+            const statsSection = document.getElementById('statsSection');
+            const leadsSection = document.getElementById('leadsSection');
+            const leadsContainer = document.getElementById('leadsContainer');
+
+            if (!businessId) {
+                alertMessage.className = 'alert alert-error show';
+                alertMessage.innerHTML = `
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <i data-lucide="alert-circle" style="width: 20px; height: 20px;"></i>
+                        <span>Please login to view your leads</span>
+                    </div>
+                `;
+                lucide.createIcons();
+                statsSection.style.display = 'none';
+                leadsSection.style.display = 'none';
+                return;
+            }
+
+            try {
+                alertMessage.className = 'alert alert-info show';
+                alertMessage.innerHTML = `
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <i data-lucide="loader" style="width: 20px; height: 20px; animation: spin 1s linear infinite;"></i>
+                        <span>Loading your leads...</span>
+                    </div>
+                `;
+                lucide.createIcons();
+                statsSection.style.display = 'none';
+                leadsSection.style.display = 'none';
+
+                const response = await fetch(`http://localhost:5000/api/business/${businessId}/leads`);
+                const data = await response.json();
+
+                if (data.success) {
+                    alertMessage.style.display = 'none';
+                    
+                    // Update stats
+                    const newCount = data.data.filter(lead => lead.status === 'new').length;
+                    const contactedCount = data.data.filter(lead => lead.status === 'contacted').length;
+                    
+                    document.getElementById('totalLeads').textContent = data.count;
+                    document.getElementById('newLeads').textContent = newCount;
+                    document.getElementById('contactedLeads').textContent = contactedCount;
+                    
+                    statsSection.style.display = 'block';
+                    leadsSection.style.display = 'block';
+
+                    document.getElementById('leadsSubtitle').textContent = 
+                        data.count === 0 ? 'No leads yet' : `Showing ${data.count} lead(s)`;
+
+                    if (data.count === 0) {
+                        leadsContainer.innerHTML = `
+                            <div class="empty-state">
+                                <div class="empty-state-icon">
+                                    <i data-lucide="inbox" style="width: 64px; height: 64px; color: var(--text-muted);"></i>
+                                </div>
+                                <div class="empty-state-title">No leads yet</div>
+                                <div class="empty-state-text">
+                                    Leads will appear here when buyers submit matching enquiries.<br>
+                                    Make sure your subscription preferences are set correctly.
+                                </div>
+                            </div>
+                        `;
+                        lucide.createIcons();
+                    } else {
+                        leadsContainer.innerHTML = data.data.map(lead => `
+                            <div class="lead-item">
+                                <div class="lead-header">
+                                    <div>
+                                        <h3 class="lead-title">${lead.enquiryId.buyerName}</h3>
+                                        <p style="font-size: 14px; color: var(--text-secondary); margin-top: 4px; display: flex; align-items: center; gap: 8px;">
+                                            <i data-lucide="package" style="width: 14px; height: 14px;"></i>
+                                            ${lead.enquiryId.category}
+                                            <span style="color: var(--border-color);">•</span>
+                                            <i data-lucide="map-pin" style="width: 14px; height: 14px;"></i>
+                                            ${lead.enquiryId.market}
+                                            <span style="color: var(--border-color);">•</span>
+                                            <i data-lucide="users" style="width: 14px; height: 14px;"></i>
+                                            ${lead.enquiryId.buyerType}
+                                        </p>
+                                    </div>
+                                    <span class="badge badge-new">${lead.status.toUpperCase()}</span>
+                                </div>
+                                
+                                <div style="margin: 16px 0;">
+                                    <p style="font-size: 14px; color: var(--text-primary); line-height: 1.6;">
+                                        ${lead.enquiryId.productDescription}
+                                    </p>
+                                </div>
+
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 16px 0;">
+                                    <div>
+                                        <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px; display: flex; align-items: center; gap: 4px;">
+                                            <i data-lucide="mail" style="width: 12px; height: 12px;"></i>
+                                            Email
+                                        </div>
+                                        <div style="font-size: 14px; color: var(--text-primary);">
+                                            <a href="mailto:${lead.enquiryId.buyerEmail}" style="color: var(--primary-color); text-decoration: none;">
+                                                ${lead.enquiryId.buyerEmail}
+                                            </a>
+                                        </div>
+                                    </div>
+                                    ${lead.enquiryId.buyerPhone ? `
+                                    <div>
+                                        <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px; display: flex; align-items: center; gap: 4px;">
+                                            <i data-lucide="phone" style="width: 12px; height: 12px;"></i>
+                                            Phone
+                                        </div>
+                                        <div style="font-size: 14px; color: var(--text-primary);">
+                                            <a href="tel:${lead.enquiryId.buyerPhone}" style="color: var(--primary-color); text-decoration: none;">
+                                                ${lead.enquiryId.buyerPhone}
+                                            </a>
+                                        </div>
+                                    </div>
+                                    ` : ''}
+                                    ${lead.enquiryId.quantity ? `
+                                    <div>
+                                        <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px; display: flex; align-items: center; gap: 4px;">
+                                            <i data-lucide="hash" style="width: 12px; height: 12px;"></i>
+                                            Quantity
+                                        </div>
+                                        <div style="font-size: 14px; color: var(--text-primary);">${lead.enquiryId.quantity}</div>
+                                    </div>
+                                    ` : ''}
+                                    ${lead.enquiryId.budget ? `
+                                    <div>
+                                        <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px; display: flex; align-items: center; gap: 4px;">
+                                            <i data-lucide="dollar-sign" style="width: 12px; height: 12px;"></i>
+                                            Budget
+                                        </div>
+                                        <div style="font-size: 14px; color: var(--text-primary);">${lead.enquiryId.budget}</div>
+                                    </div>
+                                    ` : ''}
+                                </div>
+
+                                <div class="lead-meta">
+                                    <span class="lead-meta-item">
+                                        <i data-lucide="clock" style="width: 14px; height: 14px;"></i>
+                                        Matched: ${new Date(lead.matchedAt).toLocaleString('en-US', { 
+                                            dateStyle: 'medium', 
+                                            timeStyle: 'short' 
+                                        })}
+                                    </span>
+                                    <span class="lead-meta-item">
+                                        <i data-lucide="fingerprint" style="width: 14px; height: 14px;"></i>
+                                        ID: ${lead.enquiryId._id.substring(0, 8)}...
+                                    </span>
+                                </div>
+                            </div>
+                        `).join('');
+                        
+                        // Reinitialize icons after adding HTML
+                        setTimeout(() => lucide.createIcons(), 100);
+                    }
+                } else {
+                    alertMessage.className = 'alert alert-error show';
+                    alertMessage.innerHTML = `
+                        <div style="display: flex; align-items: start; gap: 12px;">
+                            <i data-lucide="x-circle" style="width: 20px; height: 20px; flex-shrink: 0;"></i>
+                            <div>
+                                <strong>Error</strong><br>${data.message || 'Invalid Business ID'}
+                            </div>
+                        </div>
+                    `;
+                    lucide.createIcons();
+                    statsSection.style.display = 'none';
+                    leadsSection.style.display = 'none';
+                }
+
+            } catch (error) {
+                alertMessage.className = 'alert alert-error show';
+                alertMessage.innerHTML = `
+                    <div style="display: flex; align-items: start; gap: 12px;">
+                        <i data-lucide="alert-triangle" style="width: 20px; height: 20px; flex-shrink: 0;"></i>
+                        <div>
+                            <strong>Error</strong><br>${error.message}
+                        </div>
+                    </div>
+                `;
+                lucide.createIcons();
+                statsSection.style.display = 'none';
+                leadsSection.style.display = 'none';
+            }
+        }
+    </script>
+
+    <style>
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</body>
+</html>
